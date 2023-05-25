@@ -1,0 +1,34 @@
+version: "3"
+services:
+  master:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 32492jh.
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./scripts:/docker-entrypoint-initdb.d
+      - ./my.cnf:/etc/mysql/my.cnf
+
+  slave1:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 32492jh.
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./scripts:/docker-entrypoint-initdb.d
+      - ./my.cnf:/etc/mysql/my.cnf
+
+  slave2:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 32492jh.
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./scripts:/docker-entrypoint-initdb.d
+      - ./my.cnf:/etc/mysql/my.cnf
