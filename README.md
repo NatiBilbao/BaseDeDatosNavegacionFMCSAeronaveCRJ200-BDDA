@@ -8,8 +8,8 @@ La base de datos de navegación FMCS para la aeronave CRJ-200 es un sistema dise
 
 Los requisitos para utilizar esta base de datos son los siguientes:
 
-    Tener instalado Docker Desktop en tu máquina local.
-    Contar con acceso a internet para descargar los recursos y archivos necesarios.
+- Tener instalado Docker Desktop en tu máquina local.
+- Contar con acceso a internet para descargar los recursos y archivos necesarios.
 
 ## Diagrama propuesto de Base de datos
 
