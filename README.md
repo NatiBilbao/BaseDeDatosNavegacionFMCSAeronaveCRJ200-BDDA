@@ -15,7 +15,7 @@ Diagrama propuesto de Base de datos
 
 Aquí se presenta un diagrama que representa la estructura propuesta para la base de datos de navegación FMCS:
 
-file:///C:/Users/HP/Desktop/Base%20de%20datos%20avanza%20Pro1/UML%20-%20Base%20de%20datos%20de%20navegaci%C3%B3n%20FMCS%20%20para%20aeronave%20CJR-200.png
+![Diagrama UML](C:\Users\HP\Desktop\Base de datos avanza Pro1\UML - Base de datos de navegación FMCS  para aeronave CJR-200.png)
 
 El diagrama proporciona una visión general de las tablas y relaciones que componen la base de datos. Esto te ayudará a comprender la estructura y los componentes principales del sistema.
 Requisitos técnicos
