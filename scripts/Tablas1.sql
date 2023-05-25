@@ -1,10 +1,12 @@
+CREATE DATABASE Nata;
+USE Nata;
 -- Tabla "Usuarios"
 CREATE TABLE Usuarios (
   ID_usuario INT PRIMARY KEY,
   Nombre VARCHAR(50),
   Apellido VARCHAR(50),
   Nombre_de_usuario VARCHAR(50),
-  Contraseña VARCHAR(50),
+  Contrasena VARCHAR(50),
   Nivel_de_acceso INT
 );
 
@@ -13,7 +15,7 @@ CREATE TABLE Aeropuertos (
   ID_aeropuerto INT PRIMARY KEY,
   Nombre VARCHAR(100),
   Ciudad VARCHAR(100),
-  País VARCHAR(100),
+  Pais VARCHAR(100),
   Latitud DECIMAL(9,6),
   Longitud DECIMAL(9,6)
 );
@@ -24,7 +26,7 @@ CREATE TABLE Rutas (
   Aeropuerto_origen INT,
   Aeropuerto_destino INT,
   Distancia FLOAT,
-  Duración_estimada TIME,
+  Duracion_estimada TIME,
   Velocidad_promedio FLOAT,
   FOREIGN KEY (Aeropuerto_origen) REFERENCES Aeropuertos(ID_aeropuerto),
   FOREIGN KEY (Aeropuerto_destino) REFERENCES Aeropuertos(ID_aeropuerto)
@@ -37,7 +39,7 @@ CREATE TABLE Vuelos (
   Fecha DATE,
   Hora_salida TIME,
   Hora_llegada TIME,
-  Número_de_pasajeros INT,
+  Numero_de_pasajeros INT,
   FOREIGN KEY (ID_ruta) REFERENCES Rutas(ID_ruta)
 );
 
@@ -46,14 +48,14 @@ CREATE TABLE Aeronaves (
   ID_aeronave INT PRIMARY KEY,
   Modelo VARCHAR(100),
   Fabricante VARCHAR(100),
-  Año_de_fabricación INT,
+  Ano_de_fabricacion INT,
   Capacidad_de_pasajeros INT,
-  Peso_máximo_despegue FLOAT
+  Peso_maximo_despegue FLOAT
 );
 
--- Tabla "Tripulación"
-CREATE TABLE Tripulación (
-  ID_tripulación INT PRIMARY KEY,
+-- Tabla "Tripulacion"
+CREATE TABLE Tripulacion (
+  ID_tripulacion INT PRIMARY KEY,
   ID_vuelo INT,
   ID_piloto INT,
   ID_copiloto INT,
