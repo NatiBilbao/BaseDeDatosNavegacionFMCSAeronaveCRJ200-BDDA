@@ -74,9 +74,9 @@ CREATE TABLE Pasajeros (
   FOREIGN KEY (ID_vuelo) REFERENCES Vuelos(ID_vuelo)
 );
 
--- Tabla "Bitácora"
-CREATE TABLE Bitácora (
-  ID_bitácora INT PRIMARY KEY,
+-- Tabla "Bitacora"
+CREATE TABLE Bitacora (
+  ID_bitacora INT PRIMARY KEY,
   ID_vuelo INT,
   Registro_fecha_hora DATETIME,
   Evento VARCHAR(100),
