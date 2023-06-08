@@ -1,86 +1,93 @@
 CREATE DATABASE Nata;
 USE Nata;
--- Tabla "Usuarios"
-CREATE TABLE Usuarios (
-  ID_usuario INT PRIMARY KEY,
-  Nombre VARCHAR(50),
-  Apellido VARCHAR(50),
-  Nombre_de_usuario VARCHAR(50),
-  Contrasena VARCHAR(50),
-  Nivel_de_acceso INT
+
+CREATE TABLE Aeronave (
+  id INT PRIMARY KEY,
+  nombre VARCHAR(50),
+  fabricante VARCHAR(50),
+  modelo VARCHAR(50),
+  capacidad_pasajeros INT,
+  autonomia_km FLOAT
 );
 
--- Tabla "Aeropuertos"
-CREATE TABLE Aeropuertos (
-  ID_aeropuerto INT PRIMARY KEY,
-  Nombre VARCHAR(100),
-  Ciudad VARCHAR(100),
-  Pais VARCHAR(100),
-  Latitud DECIMAL(9,6),
-  Longitud DECIMAL(9,6)
+CREATE TABLE Piloto (
+  id INT PRIMARY KEY,
+  nombre VARCHAR(50),
+  apellido VARCHAR(50),
+  rango VARCHAR(50),
+  horas_vuelo INT
 );
 
--- Tabla "Rutas"
-CREATE TABLE Rutas (
-  ID_ruta INT PRIMARY KEY,
-  Aeropuerto_origen INT,
-  Aeropuerto_destino INT,
-  Distancia FLOAT,
-  Duracion_estimada TIME,
-  Velocidad_promedio FLOAT,
-  FOREIGN KEY (Aeropuerto_origen) REFERENCES Aeropuertos(ID_aeropuerto),
-  FOREIGN KEY (Aeropuerto_destino) REFERENCES Aeropuertos(ID_aeropuerto)
+CREATE TABLE Vuelo (
+  id INT PRIMARY KEY,
+  fecha DATE,
+  hora_salida TIME,
+  hora_llegada TIME,
+  origen VARCHAR(50),
+  destino VARCHAR(50),
+  id_aeronave INT,
+  id_piloto INT,
+  FOREIGN KEY (id_aeronave) REFERENCES Aeronave(id),
+  FOREIGN KEY (id_piloto) REFERENCES Piloto(id)
 );
 
--- Tabla "Vuelos"
-CREATE TABLE Vuelos (
-  ID_vuelo INT PRIMARY KEY,
-  ID_ruta INT,
-  Fecha DATE,
-  Hora_salida TIME,
-  Hora_llegada TIME,
-  Numero_de_pasajeros INT,
-  FOREIGN KEY (ID_ruta) REFERENCES Rutas(ID_ruta)
+CREATE TABLE Plan_vuelo (
+  id INT PRIMARY KEY,
+  id_vuelo INT,
+  ruta VARCHAR(255),
+  altitud_crucero INT,
+  velocidad_crucero INT,
+  FOREIGN KEY (id_vuelo) REFERENCES Vuelo(id)
 );
 
--- Tabla "Aeronaves"
-CREATE TABLE Aeronaves (
-  ID_aeronave INT PRIMARY KEY,
-  Modelo VARCHAR(100),
-  Fabricante VARCHAR(100),
-  Ano_de_fabricacion INT,
-  Capacidad_de_pasajeros INT,
-  Peso_maximo_despegue FLOAT
+CREATE TABLE Ruta_navegacion (
+  id INT PRIMARY KEY,
+  id_plan_vuelo INT,
+  waypoint VARCHAR(50),
+  latitud FLOAT,
+  longitud FLOAT,
+  FOREIGN KEY (id_plan_vuelo) REFERENCES Plan_vuelo(id)
 );
 
--- Tabla "Tripulacion"
-CREATE TABLE Tripulacion (
-  ID_tripulacion INT PRIMARY KEY,
-  ID_vuelo INT,
-  ID_piloto INT,
-  ID_copiloto INT,
-  ID_auxiliar INT,
-  FOREIGN KEY (ID_vuelo) REFERENCES Vuelos(ID_vuelo),
-  FOREIGN KEY (ID_piloto) REFERENCES Usuarios(ID_usuario),
-  FOREIGN KEY (ID_copiloto) REFERENCES Usuarios(ID_usuario),
-  FOREIGN KEY (ID_auxiliar) REFERENCES Usuarios(ID_usuario)
+CREATE TABLE Estado_aeronave (
+  id INT PRIMARY KEY,
+  id_aeronave INT,
+  fecha_hora TIMESTAMP,
+  estado VARCHAR(50),
+  FOREIGN KEY (id_aeronave) REFERENCES Aeronave(id)
 );
 
--- Tabla "Pasajeros"
-CREATE TABLE Pasajeros (
-  ID_pasajero INT PRIMARY KEY,
-  ID_vuelo INT,
-  Nombre VARCHAR(50),
-  Apellido VARCHAR(50),
-  Asiento VARCHAR(10),
-  FOREIGN KEY (ID_vuelo) REFERENCES Vuelos(ID_vuelo)
+CREATE TABLE Reporte_mantenimiento (
+  id INT PRIMARY KEY,
+  id_aeronave INT,
+  fecha DATE,
+  descripcion TEXT,
+  FOREIGN KEY (id_aeronave) REFERENCES Aeronave(id)
 );
 
--- Tabla "Bitacora"
-CREATE TABLE Bitacora (
-  ID_bitacora INT PRIMARY KEY,
-  ID_vuelo INT,
-  Registro_fecha_hora DATETIME,
-  Evento VARCHAR(100),
-  FOREIGN KEY (ID_vuelo) REFERENCES Vuelos(ID_vuelo)
+CREATE TABLE Mensaje_piloto (
+  id INT PRIMARY KEY,
+  id_piloto INT,
+  fecha_hora TIMESTAMP,
+  mensaje TEXT,
+  FOREIGN KEY (id_piloto) REFERENCES Piloto(id)
 );
+
+CREATE TABLE Pasajero (
+  id INT PRIMARY KEY,
+  nombre VARCHAR(50),
+  apellido VARCHAR(50),
+  asiento VARCHAR(10),
+  id_vuelo INT,
+  FOREIGN KEY (id_vuelo) REFERENCES Vuelo(id)
+);
+
+CREATE TABLE Registro_vuelo (
+  id INT PRIMARY KEY,
+  id_vuelo INT,
+  fecha DATE,
+  duracion TIME,
+  distancia FLOAT,
+  FOREIGN KEY (id_vuelo) REFERENCES Vuelo(id)
+);
+
