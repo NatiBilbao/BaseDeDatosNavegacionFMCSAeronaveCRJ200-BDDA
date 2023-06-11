@@ -23,11 +23,11 @@ El diagrama proporciona una visión general de las tablas y relaciones que compo
 
 Para poder implementar y utilizar la base de datos de navegación FMCS, debes asegurarte de tener los siguientes requisitos técnicos en tu entorno:
 
-    Docker Desktop: Asegúrate de tener Docker Desktop instalado en tu máquina. Puedes descargarlo desde https://www.docker.com/products/docker-desktop.
+Docker Desktop: Asegúrate de tener Docker Desktop instalado en tu máquina. Puedes descargarlo desde https://www.docker.com/products/docker-desktop.
 
-    Espacio en disco: Verifica que tienes suficiente espacio en disco para alojar la base de datos y otros recursos necesarios.
+Espacio en disco: Verifica que tienes suficiente espacio en disco para alojar la base de datos y otros recursos necesarios.
 
-    Conexión a internet: Asegúrate de tener una conexión a internet estable para poder descargar los archivos y recursos        necesarios durante la implementación.
+Conexión a internet: Asegúrate de tener una conexión a internet estable para poder descargar los archivos y recursos necesarios durante la implementación.
 
 ## Cómo levantar localmente
 
