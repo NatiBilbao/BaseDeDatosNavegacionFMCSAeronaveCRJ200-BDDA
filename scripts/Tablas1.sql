@@ -1,8 +1,8 @@
 CREATE DATABASE Nata;
-USE Nata;
+USE Nata; 
 
 CREATE TABLE Aeronave (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(50),
   fabricante VARCHAR(50),
   modelo VARCHAR(50),
@@ -11,7 +11,7 @@ CREATE TABLE Aeronave (
 );
 
 CREATE TABLE Piloto (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(50),
   apellido VARCHAR(50),
   rango VARCHAR(50),
@@ -19,7 +19,7 @@ CREATE TABLE Piloto (
 );
 
 CREATE TABLE Vuelo (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   fecha DATE,
   hora_salida TIME,
   hora_llegada TIME,
@@ -32,7 +32,7 @@ CREATE TABLE Vuelo (
 );
 
 CREATE TABLE Plan_vuelo (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   id_vuelo INT,
   ruta VARCHAR(255),
   altitud_crucero INT,
@@ -41,7 +41,7 @@ CREATE TABLE Plan_vuelo (
 );
 
 CREATE TABLE Ruta_navegacion (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   id_plan_vuelo INT,
   waypoint VARCHAR(50),
   latitud FLOAT,
@@ -50,7 +50,7 @@ CREATE TABLE Ruta_navegacion (
 );
 
 CREATE TABLE Estado_aeronave (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   id_aeronave INT,
   fecha_hora TIMESTAMP,
   estado VARCHAR(50),
@@ -58,7 +58,7 @@ CREATE TABLE Estado_aeronave (
 );
 
 CREATE TABLE Reporte_mantenimiento (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   id_aeronave INT,
   fecha DATE,
   descripcion TEXT,
@@ -66,7 +66,7 @@ CREATE TABLE Reporte_mantenimiento (
 );
 
 CREATE TABLE Mensaje_piloto (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   id_piloto INT,
   fecha_hora TIMESTAMP,
   mensaje TEXT,
@@ -74,7 +74,7 @@ CREATE TABLE Mensaje_piloto (
 );
 
 CREATE TABLE Pasajero (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(50),
   apellido VARCHAR(50),
   asiento VARCHAR(10),
@@ -83,11 +83,10 @@ CREATE TABLE Pasajero (
 );
 
 CREATE TABLE Registro_vuelo (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   id_vuelo INT,
   fecha DATE,
   duracion TIME,
   distancia FLOAT,
   FOREIGN KEY (id_vuelo) REFERENCES Vuelo(id)
 );
-
