@@ -92,4 +92,3 @@ BEGIN
     VALUES (NEW.id, 'Inserción');
 END //
 DELIMITER ;
-
