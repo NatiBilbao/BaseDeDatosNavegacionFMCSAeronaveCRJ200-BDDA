@@ -1,3 +1,5 @@
+USE Nata; 
+
 INSERT INTO Aeronave (id, nombre, fabricante, modelo, capacidad_pasajeros, autonomia_km)
 VALUES
 (1, 'CRJ-200-001', 'Bombardier', 'CRJ-200', 50, 2500),

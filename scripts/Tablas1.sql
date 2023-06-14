@@ -1,4 +1,4 @@
-CREATE DATABASE Nata;
+-- CREATE DATABASE Nata;
 USE Nata; 
 
 CREATE TABLE Aeronave (
@@ -90,3 +90,5 @@ CREATE TABLE Registro_vuelo (
   distancia FLOAT,
   FOREIGN KEY (id_vuelo) REFERENCES Vuelo(id)
 );
+
+
