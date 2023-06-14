@@ -15,7 +15,7 @@ Los requisitos para utilizar esta base de datos son los siguientes:
 
 Aquí se presenta un diagrama que representa la estructura propuesta para la base de datos de navegación FMCS:
 
-![Diagrama UML](https://github.com/NatiBilbao/BaseDeDatosNavegacionFMCSAeronaveCRJ200-BDDA/blob/master/UML%20-%20Base%20de%20datos%20de%20navegaci%C3%B3n%20FMCS%20%20para%20aeronave%20CJR-200.png)
+![Diagrama UML](https://github.com/NatiBilbao/BaseDeDatosNavegacionFMCSAeronaveCRJ200-BDDA/blob/master/Diagrama%20EER%20-%20Base%20de%20Datos%20de%20Navegaci%C3%B3n%20FMCS%20%20para%20Aeronave%20CJR-200.png)
 
 El diagrama proporciona una visión general de las tablas y relaciones que componen la base de datos. Esto te ayudará a comprender la estructura y los componentes principales del sistema.
 
