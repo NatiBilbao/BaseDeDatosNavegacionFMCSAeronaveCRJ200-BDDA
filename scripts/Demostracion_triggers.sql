@@ -1,3 +1,5 @@
+USE Nata;
+
 -- Insertar un nuevo registro en la tabla Vuelo
 INSERT INTO Vuelo (id, fecha, hora_salida, hora_llegada, origen, destino, id_aeronave, id_piloto)
 VALUES (6, '2023-06-06', '10:00:00', '12:30:00', 'MIA', 'LGA', 3, 2);
