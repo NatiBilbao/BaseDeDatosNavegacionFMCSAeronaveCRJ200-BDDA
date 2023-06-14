@@ -9,12 +9,12 @@ SELECT * FROM Registro_vuelo WHERE id_vuelo = 6;
 INSERT INTO Aeronave (id, nombre, fabricante, modelo, capacidad_pasajeros, autonomia_km)
 VALUES (6, 'CRJ-200-006', 'Bombardier', 'CRJ-200', 50, 2500);
 
--- Verificar el nuevo reporte de mantenimiento en la tabla Reporte_mantenimiento
-SELECT * FROM Reporte_mantenimiento WHERE id_aeronave = 6;
+-- Verificar el nuevo reporte de mantenimiento en la tabla Reporte_mantenimiento --ej
+SELECT * FROM Reporte_mantenimiento WHERE id_aeronave = 5;
 
--- Insertar un nuevo reporte de mantenimiento en la tabla Reporte_mantenimiento
+-- Insertar un nuevo reporte de mantenimiento en la tabla Reporte_mantenimiento --ej
 INSERT INTO Reporte_mantenimiento (id, id_aeronave, fecha, descripcion)
-VALUES (6, 4, '2023-06-06', 'Revisión de los sistemas hidráulicos');
+VALUES (8, 4, '2023-06-06', 'Revisión de los sistemas hidráulicos');
 
 -- Verificar el cambio de estado en la tabla Estado_aeronave
 SELECT * FROM Estado_aeronave WHERE id_aeronave = 4;
