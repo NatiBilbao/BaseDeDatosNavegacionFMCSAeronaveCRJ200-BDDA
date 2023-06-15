@@ -1,3 +1,5 @@
+USE Nata;
+
 DELIMITER //
 
 -- Stored Procedure para la inserción de una nueva aeronave
