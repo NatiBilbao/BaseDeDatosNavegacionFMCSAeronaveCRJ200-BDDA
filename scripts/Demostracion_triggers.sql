@@ -8,11 +8,10 @@ VALUES (7, '2023-06-06', '10:00:00', '12:30:00', 'MIA', 'LGA', 3, 2);
 INSERT INTO Aeronave (id, nombre, fabricante, modelo, capacidad_pasajeros, autonomia_km)
 VALUES (6, 'CRJ-200-006', 'Bombardier', 'CRJ-200', 50, 2500);
 
-<<<<<<< HEAD
 -- Insertar un nuevo reporte de mantenimiento en la tabla Reporte_mantenimiento
 INSERT INTO Reporte_mantenimiento (id, id_aeronave, fecha, descripcion)
 VALUES (9, 4, '2023-06-06', 'Revisión de los sistemas hidráulicos');
-=======
+
 -- Verificar el nuevo reporte de mantenimiento en la tabla Reporte_mantenimiento --ej
 SELECT * FROM Reporte_mantenimiento WHERE id_aeronave = 5;
 
@@ -22,7 +21,6 @@ VALUES (8, 4, '2023-06-06', 'Revisión de los sistemas hidráulicos');
 
 -- Verificar el cambio de estado en la tabla Estado_aeronave
 SELECT * FROM Estado_aeronave WHERE id_aeronave = 4;
->>>>>>> d4efb623389d8301a06460462e17d6b9623cd76b
 
 -- Insertar un nuevo registro en la tabla Vuelo
 INSERT INTO Vuelo (id, fecha, hora_salida, hora_llegada, origen, destino, id_aeronave, id_piloto)
